@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Кластеризация отзывов</h2>
+  <p class="muted">Отзывы векторизованы моделью SentenceTransformer
+     (all-MiniLM-L6-v2, {{ summary.embedding_dim }} измерений) и разбиты на кластеры
+     алгоритмом KMeans. Для визуализации применён метод главных компонент; две
+     компоненты объясняют {{ (summary.pca_variance * 100)|round(1) }} % дисперсии.
+     График интерактивный: наведение показывает товар и оценку, легенда скрывает
+     и показывает кластеры.</p>
+  <iframe src="{{ url_for('static', filename='clusters.html') }}"
+          style="width:100%;height:640px;border:1px solid #2a3850;border-radius:8px;background:#fff"></iframe>
+</section>
+
+<section class="card">
+  <h3>Характеристики кластеров</h3>
+  <table>
+    <tr><th>Кластер</th><th>Отзывов</th><th>Средняя оценка</th><th>Доля позитива</th>
+        <th>Топ-10 слов</th><th></th></tr>
+    {% for c in info %}
+    <tr>
+      <td><b>{{ c.cluster }}</b></td><td>{{ c.size }}</td><td>{{ c.mean_rating }}</td>
+      <td>{{ c.positive_share }} %</td>
+      <td class="muted">{{ c.top_words|join(', ') }}</td>
+      <td><a class="btn" href="{{ url_for('clusters', c=c.cluster) }}">примеры</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+
+{% if chosen is not none %}
+<section class="card">
+  <h3>Примеры отзывов из кластера {{ chosen }}</h3>
+  <table>
+    <tr><th>Товар</th><th>Оценка</th><th>Отзыв</th></tr>
+    {% for e in examples %}
+    <tr><td>{{ e.product[:45] }}</td><td>{{ e.rating }}</td><td>{{ e.text[:320] }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
+
+<section class="card">
+  <h3>Метрики кластеризации</h3>
+  <table>
+    <tr><th>Модель</th><th>Кластеров</th><th>Шум</th><th>Silhouette</th>
+        <th>Davies-Bouldin</th><th>Calinski-Harabasz</th></tr>
+    {% for r in summary.clustering %}
+    <tr><td>{{ r['Модель'] }}</td><td>{{ r['Кластеров'] }}</td><td>{{ r['Шум'] }}</td>
+        <td>{{ r['Silhouette'] }}</td><td>{{ r['Davies-Bouldin'] }}</td>
+        <td>{{ r['Calinski-Harabasz'] }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Сравнение моделей классификации тональности</h2>
+  <p class="muted">Пять моделей обучены на TF-IDF представлении отзывов с базовыми
+     параметрами, затем для каждой выполнен подбор гиперпараметров через GridSearchCV
+     не менее чем по трём параметрам. Лучшая модель — <b>{{ summary.best_model }}</b>.</p>
+  <table>
+    <tr><th>Модель</th><th>Этап</th><th>Accuracy</th><th>Precision</th>
+        <th>Recall</th><th>F1</th><th>ROC-AUC</th><th>Время, с</th></tr>
+    {% for _, r in metrics.iterrows() %}
+    <tr class="{{ 'after' if r['Этап'] == 'после подбора' else '' }}">
+      <td>{{ r['Модель'] }}</td><td>{{ r['Этап'] }}</td><td>{{ r['Accuracy'] }}</td>
+      <td>{{ r['Precision'] }}</td><td>{{ r['Recall'] }}</td>
+      <td><b>{{ r['F1'] }}</b></td><td>{{ r['ROC-AUC'] }}</td><td>{{ r['Время, с'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+
+<section class="card">
+  <h3>Лучшие найденные параметры</h3>
+  <table><tr><th>Модель</th><th>Параметры</th></tr>
+  {% for name, params in summary.best_params.items() %}
+  <tr><td>{{ name }}</td><td><code>{{ params }}</code></td></tr>
+  {% endfor %}
+  </table>
+</section>
+
+<section class="card">
+  <h3>ROC-кривые моделей после подбора гиперпараметров</h3>
+  <img src="{{ url_for('static', filename='roc_curves.png') }}" alt="ROC-кривые">
+</section>
+{% endblock %}

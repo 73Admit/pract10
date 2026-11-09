@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Статистика по товарам</h2>
+  <p class="muted">Всего товаров: {{ total }}. Показаны первые 60 по количеству отзывов.</p>
+  <table>
+    <tr><th>Товар</th><th>Бренд</th><th>Отзывов</th><th>Средний рейтинг</th>
+        <th>Доля позитива</th><th>Первый отзыв</th><th>Последний отзыв</th></tr>
+    {% for _, r in table.iterrows() %}
+    <tr><td>{{ r['product'][:65] }}</td><td>{{ r['brand'] }}</td>
+        <td>{{ r['отзывов'] }}</td><td>{{ r['средний_рейтинг'] }}</td>
+        <td>{{ r['доля_позитива'] }} %</td>
+        <td>{{ r['первый_отзыв'].strftime('%Y-%m-%d') }}</td>
+        <td>{{ r['последний_отзыв'].strftime('%Y-%m-%d') }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,393 @@
+{
+ "rows": 4682,
+ "products": 123,
+ "users": 4616,
+ "positive_share": 0.8494,
+ "best_model": "LogisticRegression",
+ "best_params": {
+  "LogisticRegression": {
+   "C": 10,
+   "class_weight": null,
+   "penalty": "l2",
+   "solver": "lbfgs"
+  },
+  "RandomForest": {
+   "class_weight": "balanced",
+   "max_depth": null,
+   "min_samples_leaf": 1,
+   "n_estimators": 400
+  },
+  "XGBoost": {
+   "learning_rate": 0.3,
+   "max_depth": 3,
+   "n_estimators": 200,
+   "subsample": 1.0
+  },
+  "MLPClassifier": {
+   "alpha": 0.001,
+   "hidden_layer_sizes": [
+    128,
+    64
+   ],
+   "learning_rate_init": 0.003
+  },
+  "CatBoost": {
+   "depth": 4,
+   "iterations": 600,
+   "learning_rate": 0.05
+  }
+ },
+ "metrics": [
+  {
+   "Модель": "LogisticRegression",
+   "Этап": "до подбора",
+   "Accuracy": 0.8591,
+   "Precision": 0.8593,
+   "Recall": 0.9975,
+   "F1": 0.9233,
+   "ROC-AUC": 0.9128,
+   "Время, с": 0.4
+  },
+  {
+   "Модель": "RandomForest",
+   "Этап": "до подбора",
+   "Accuracy": 0.873,
+   "Precision": 0.8716,
+   "Recall": 0.9975,
+   "F1": 0.9303,
+   "ROC-AUC": 0.8799,
+   "Время, с": 0.7
+  },
+  {
+   "Модель": "XGBoost",
+   "Этап": "до подбора",
+   "Accuracy": 0.873,
+   "Precision": 0.8886,
+   "Recall": 0.9724,
+   "F1": 0.9286,
+   "ROC-AUC": 0.8776,
+   "Время, с": 2.4
+  },
+  {
+   "Модель": "MLPClassifier",
+   "Этап": "до подбора",
+   "Accuracy": 0.8805,
+   "Precision": 0.9033,
+   "Recall": 0.9623,
+   "F1": 0.9319,
+   "ROC-AUC": 0.8818,
+   "Время, с": 29.6
+  },
+  {
+   "Модель": "CatBoost",
+   "Этап": "до подбора",
+   "Accuracy": 0.8719,
+   "Precision": 0.8739,
+   "Recall": 0.9925,
+   "F1": 0.9294,
+   "ROC-AUC": 0.8725,
+   "Время, с": 57.0
+  },
+  {
+   "Модель": "LogisticRegression",
+   "Этап": "после подбора",
+   "Accuracy": 0.8943,
+   "Precision": 0.9001,
+   "Recall": 0.9849,
+   "F1": 0.9406,
+   "ROC-AUC": 0.9067,
+   "Время, с": 7.8
+  },
+  {
+   "Модель": "RandomForest",
+   "Этап": "после подбора",
+   "Accuracy": 0.8943,
+   "Precision": 0.9144,
+   "Recall": 0.9661,
+   "F1": 0.9395,
+   "ROC-AUC": 0.8971,
+   "Время, с": 25.3
+  },
+  {
+   "Модель": "XGBoost",
+   "Этап": "после подбора",
+   "Accuracy": 0.8794,
+   "Precision": 0.8939,
+   "Recall": 0.9736,
+   "F1": 0.9321,
+   "ROC-AUC": 0.877,
+   "Время, с": 84.4
+  },
+  {
+   "Модель": "MLPClassifier",
+   "Этап": "после подбора",
+   "Accuracy": 0.8879,
+   "Precision": 0.9108,
+   "Recall": 0.9623,
+   "F1": 0.9359,
+   "ROC-AUC": 0.8935,
+   "Время, с": 118.5
+  },
+  {
+   "Модель": "CatBoost",
+   "Этап": "после подбора",
+   "Accuracy": 0.8698,
+   "Precision": 0.8744,
+   "Recall": 0.9887,
+   "F1": 0.9281,
+   "ROC-AUC": 0.8625,
+   "Время, с": 291.5
+  }
+ ],
+ "clustering": [
+  {
+   "Модель": "KMeans (k=5)",
+   "Кластеров": 5,
+   "Шум": 0,
+   "Silhouette": 0.0684,
+   "Davies-Bouldin": 3.1701,
+   "Calinski-Harabasz": 244.6
+  },
+  {
+   "Модель": "DBSCAN (eps=0.9)",
+   "Кластеров": 3,
+   "Шум": 1126,
+   "Silhouette": 0.1094,
+   "Davies-Bouldin": 2.1231,
+   "Calinski-Harabasz": 217.1
+  }
+ ],
+ "clusters": [
+  {
+   "cluster": 0,
+   "size": 2035,
+   "mean_rating": 4.29,
+   "positive_share": 83.3,
+   "top_words": [
+    "game",
+    "great",
+    "like",
+    "play",
+    "fun",
+    "games",
+    "good",
+    "love",
+    "story",
+    "graphics"
+   ],
+   "examples": [
+    "I like the game alot but i cant play online because i downloaded it from ebgames.com so i dont have a cd key so i cant play online. But the game is challenging, it gives you a feeling of how intense WW 2 was, and you get",
+    "I just got Lego Batman and i must say for starters, dont let the tittle fool u, Lego batman is much more fun then it sounds. The gameplay is straight forward, and the controls are very easy to pick up on. Another good pa",
+    "The Lego name has done it again. Post Lego Star Wars, I have been waiting for Lego Batman. I was disappointed with Lego Indiana Jones, which left much to be desired. However as I hoped Batman has been awesome. Before Bat",
+    "In plain English: This Game Is FUN! You'll want to play it as soon as you finish the first mission. True LEGO Game to the fullest. You get to use all vehicles, all suits and all characters. The most fun you'll have being",
+    "The game is awesome plus you can choose your side the first time when I played the demo at my cousin's house it was amazing , so I went out and bought it! It was amazing how there is so many characters and missions. Plus"
+   ]
+  },
+  {
+   "cluster": 1,
+   "size": 484,
+   "mean_rating": 4.86,
+   "positive_share": 98.1,
+   "top_words": [
+    "batteries",
+    "review",
+    "part",
+    "collected",
+    "promotion",
+    "energizer",
+    "long",
+    "last",
+    "max",
+    "use"
+   ],
+   "examples": [
+    "I feel that even though the overall package is a good value, I think the lantern is overpriced.\nI am [ИМЯ СКРЫТО] that the constant blinking light will cause the batteries to prematurely discharge.",
+    "The Lantern, and Flashlights are made very well, and also has a powerfull light. The price for it all can't be beat. The only problem was no instructions of how to put the batteries in the Lantern. I had to scout this si",
+    "After Hurrican Sandy I knew I need some additonal lighting for when the electric was off. I purchased one lantern, when I saw how much light it delivered I purchased several more for my family. Lots of light for a little",
+    "This is a small lantern but powerful. I bought the lantern that uses 8 D batteries. This lantern is almost as powerful, uses less batteries and last longer. It's also small. I bought 4. Kept two and gave two as gifts. Wo",
+    "However even though it says 300 lumens on the packaging you will be delivered one that says 240 lumens. I have tried twice. But the lantern provide plenty of light. It will light up a good sized room vs a flashlight. I a"
+   ]
+  },
+  {
+   "cluster": 2,
+   "size": 1260,
+   "mean_rating": 4.15,
+   "positive_share": 78.3,
+   "top_words": [
+    "great",
+    "controller",
+    "love",
+    "like",
+    "bought",
+    "part",
+    "sound",
+    "review",
+    "good",
+    "headset"
+   ],
+   "examples": [
+    "IT IS A VERY AWESOME!!11!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+    "Got my package, installed it and got a STEAM POWERED program that starts itself every time I start my computer [no option to turn that off] and emediately takes me to thier online site with only options to buy games. The",
+    "It is easy to play and a good workout! The song selection is great. There is music for every MJ fan.",
+    "the to new legends are zekrom and reshiam coming out in april",
+    "i can't wait for this to come out! i first found out about it when my friend told me about it and then i did some research and discovered that there would be a new genartion so i decided to get black because the legendar"
+   ]
+  },
+  {
+   "cluster": 3,
+   "size": 654,
+   "mean_rating": 4.54,
+   "positive_share": 90.5,
+   "top_words": [
+    "monitor",
+    "review",
+    "part",
+    "collected",
+    "promotion",
+    "gaming",
+    "use",
+    "great",
+    "picture",
+    "love"
+   ],
+   "examples": [
+    "Hey guys, just wanted to shed some light on pc version and console version as I own both. If you have a pc that can run it then get it for pc you'll love all the added Physx stuff that goes along with it and having nativ",
+    "I bought this a week ago and I am [ИМЯ СКРЫТО] the 3D effects make it better like the picture is coming out",
+    "Graphics are solid. Voice acting is terrible as is my career. 2k locking everything behind lockboxes is also a waste",
+    "Coming from a PC that runs Doom at 1440p 144fps,I was surprised how well Doom runs on the switch. Must have for the Switch!! A+/10!!!",
+    "I BOUGHT THIS YESTERDAY FOR MY GAMING IT IS A AMAZING MONITOR FOR GAMING THE RESPONSE TIME IS REALLU. FAST I RECOMMEND IT"
+   ]
+  },
+  {
+   "cluster": 4,
+   "size": 249,
+   "mean_rating": 4.49,
+   "positive_share": 91.2,
+   "top_words": [
+    "pokemon",
+    "game",
+    "new",
+    "games",
+    "black",
+    "like",
+    "great",
+    "good",
+    "graphics",
+    "love"
+   ],
+   "examples": [
+    "I can't wait until 2011 for this game i have herd that when you pre-order you gat a pokemonk keychain that plays the main legondaries cry. i especialy like the profile scenes. the squrile legondary looks awsome.",
+    "Look, I bought this game in Japanese, and it just was ok, I played it alot because i wanted to playthrough the game just for fun. The graphics were great and there wasn't alot of challenge to the game. I mean come on, I ",
+    "pokemon black have so much 3d action in it. When u get the 3ds u can see full 3d action.",
+    "It seems as though Pokemon has finally used that Ace they've been hiding up their sleeve. I mean, Black and White? This is [ИМЯ СКРЫТО] an awful lot like the end.",
+    "i got more info. the game includes an area called the dream world. its a place where you can catch and see pokemon from other regions. the pokemon contest will be brought back into gameplay and you can earn a total of 68"
+   ]
+  }
+ ],
+ "pca_variance": 0.1567,
+ "embedding_dim": 384,
+ "top_products": [
+  {
+   "product": "Energizer MAX Alkaline Batteries 8 Pack - D",
+   "отзывов": 424,
+   "средняя_оценка": 4.92,
+   "доля_позитива": 100.0
+  },
+  {
+   "product": "PowerA Enhanced Wireless Controller for Nintendo Switch Link Gold",
+   "отзывов": 31,
+   "средняя_оценка": 4.9,
+   "доля_позитива": 100.0
+  },
+  {
+   "product": "Microsoft Wireless Controller for Xbox Series X 20th Anniversary Special Edition",
+   "отзывов": 34,
+   "средняя_оценка": 4.91,
+   "доля_позитива": 97.1
+  },
+  {
+   "product": "Samsung 49-in Super Ultra-Wide Dual QHD (5120x1440) 120Hz Curved Gaming Monitor C49RG9",
+   "отзывов": 410,
+   "средняя_оценка": 4.74,
+   "доля_позитива": 96.1
+  },
+  {
+   "product": "Okami HD - PlayStation 4",
+   "отзывов": 50,
+   "средняя_оценка": 4.68,
+   "доля_позитива": 96.0
+  },
+  {
+   "product": "WITHit Dabney Lee Apple Watch 38/40/41mm Band Flower Child",
+   "отзывов": 25,
+   "средняя_оценка": 4.8,
+   "доля_позитива": 96.0
+  },
+  {
+   "product": "Create-a-Space Storage Center 10 Piece Set",
+   "отзывов": 22,
+   "средняя_оценка": 4.73,
+   "доля_позитива": 95.5
+  },
+  {
+   "product": "Star Wars Episode IX: The Rise of Skywalker Supreme Leader Kylo Ren Force FX Elite Lightsaber",
+   "отзывов": 22,
+   "средняя_оценка": 4.73,
+   "доля_позитива": 95.5
+  },
+  {
+   "product": "Yoshi's Crafted World - Nintendo Switch",
+   "отзывов": 193,
+   "средняя_оценка": 4.68,
+   "доля_позитива": 93.8
+  },
+  {
+   "product": "Quantic Dream Collection - PlayStation 4",
+   "отзывов": 92,
+   "средняя_оценка": 4.6,
+   "доля_позитива": 92.4
+  }
+ ],
+ "negative_words": [
+  [
+   "game",
+   669
+  ],
+  [
+   "like",
+   219
+  ],
+  [
+   "games",
+   131
+  ],
+  [
+   "good",
+   131
+  ],
+  [
+   "play",
+   129
+  ],
+  [
+   "because",
+   117
+  ],
+  [
+   "time",
+   107
+  ],
+  [
+   "new",
+   104
+  ],
+  [
+   "bought",
+   99
+  ],
+  [
+   "even",
+   97
+  ]
+ ]
+}

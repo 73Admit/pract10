@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Общая статистика</h2>
+  <div class="kpi">
+    <div><span>{{ summary.rows }}</span>отзывов в датасете</div>
+    <div><span>{{ summary.products }}</span>товаров</div>
+    <div><span>{{ summary.users }}</span>пользователей</div>
+    <div><span>{{ (summary.positive_share * 100)|round(1) }} %</span>доля позитива</div>
+    <div><span>{{ db.total }}</span>отзывов добавлено через сайт</div>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Распределение оценок и динамика отзывов</h3>
+  <div class="two">
+    <img src="{{ url_for('static', filename='rating_dist.png') }}" alt="распределение оценок">
+    <img src="{{ url_for('static', filename='dynamics.png') }}" alt="динамика отзывов">
+  </div>
+</section>
+
+<section class="card">
+  <h3>Облако слов всех отзывов</h3>
+  <img src="{{ url_for('static', filename='wordcloud.png') }}" alt="облако слов">
+  <h3>Облако слов негативных отзывов</h3>
+  <img src="{{ url_for('static', filename='wordcloud_neg.png') }}" alt="облако слов негатива">
+</section>
+
+<section class="card">
+  <h3>Топ-10 товаров по доле позитивных отзывов</h3>
+  <table>
+    <tr><th>Товар</th><th>Отзывов</th><th>Средняя оценка</th><th>Доля позитива</th></tr>
+    {% for _, r in top.iterrows() %}
+    <tr><td>{{ r['product'][:70] }}</td><td>{{ r['отзывов'] }}</td>
+        <td>{{ r['средняя_оценка'] }}</td><td>{{ r['доля_позитива'] }} %</td></tr>
+    {% endfor %}
+  </table>
+</section>
+
+<section class="card">
+  <h3>Самые частые слова в негативных отзывах</h3>
+  <table><tr><th>Слово</th><th>Упоминаний</th></tr>
+  {% for w, c in neg_words %}<tr><td>{{ w }}</td><td>{{ c }}</td></tr>{% endfor %}
+  </table>
+</section>
+{% endblock %}

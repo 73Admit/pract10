@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Оставить отзыв</h2>
+  <p class="muted">Модель <b>{{ summary.best_model }}</b> определит тональность отзыва
+     и покажет уверенность в процентах. Персональные данные — телефон, почта, номер карты
+     и имя — будут автоматически замаскированы перед сохранением в базу.</p>
+  <form method="post">
+    <div class="row">
+      <select name="product">
+        {% for p in products %}<option value="{{ p }}">{{ p[:70] }}</option>{% endfor %}
+      </select>
+      <select name="rating">
+        {% for i in range(1, 6) %}<option value="{{ i }}" {% if i == 5 %}selected{% endif %}>{{ i }} из 5</option>{% endfor %}
+      </select>
+    </div>
+    <div class="row">
+      <textarea name="text" rows="4" placeholder="Текст отзыва на английском языке, например: The controller works great, battery lasts long" required></textarea>
+    </div>
+    <div class="row"><button type="submit">Отправить отзыв</button></div>
+  </form>
+</section>
+
+{% if prediction %}
+<section class="card">
+  <h3>Результат анализа</h3>
+  <p class="big {{ 'pos' if prediction.positive else 'neg' }}">
+    Тональность: {{ prediction.label }} — уверенность {{ prediction.confidence }} %
+  </p>
+  <p class="muted">Вероятность позитива: {{ prediction.p_positive }} %</p>
+  <p><b>Текст после маскировки персональных данных:</b><br>{{ prediction.masked_text }}</p>
+</section>
+{% endif %}
+
+<section class="card">
+  <h3>Рекомендации для вас</h3>
+  <p class="muted">{{ note }}</p>
+  <table>
+    <tr><th>#</th><th>Товар</th><th>Прогноз оценки</th><th>Отзывов</th><th>Доля позитива</th><th>Основание</th></tr>
+    {% for r in recs %}
+    <tr><td>{{ loop.index }}</td><td><b>{{ r.product }}</b></td><td>{{ r.predicted }}</td>
+        <td>{{ r.reviews }}</td><td>{{ r.positive }} %</td><td class="muted">{{ r.reason }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+
+{% if my_reviews %}
+<section class="card">
+  <h3>Ваши отзывы</h3>
+  <table>
+    <tr><th>Дата</th><th>Товар</th><th>Оценка</th><th>Тональность</th><th>Уверенность</th></tr>
+    {% for r in my_reviews %}
+    <tr><td>{{ r.created }}</td><td>{{ r.product[:50] }}</td><td>{{ r.rating }}</td>
+        <td>{{ 'позитивный' if r.sentiment else 'негативный' }}</td>
+        <td>{{ r.confidence }} %</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
+{% endblock %}
