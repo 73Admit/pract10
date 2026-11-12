@@ -17,3 +17,6 @@ static/wordcloud.png
 static/wordcloud_neg.png
 static/rating_dist.png
 static/dynamics.png
+
+# отчёт Word сдаётся отдельно, в репозитории не нужен
+*.docx
