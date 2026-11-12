@@ -1,0 +1,21 @@
+2026-11-10 00:13:22 | INFO | user=anonymous | action=GET / | result=запрос принят
+2026-11-10 00:13:25 | INFO | user=test_user | action=unit test | result=ok
+2026-11-10 00:13:33 | INFO | user=anonymous | action=GET / | result=запрос принят
+2026-11-10 00:13:34 | INFO | user=web_8723fc98 | action=POST / | result=запрос принят
+2026-11-10 00:13:34 | INFO | user=web_8723fc98 | action=POST /review | result=товар=Aluratek Fast Charge Black Power Bank with Dual USB and Single USB-C Ports 20000mAh оценка=2 тональность=позитивный уверенность=64.3%
+2026-11-10 00:13:36 | INFO | user=web_8723fc98 | action=GET /stats | result=запрос принят
+2026-11-10 00:13:42 | INFO | user=web_8723fc98 | action=GET /products | result=запрос принят
+2026-11-10 00:13:43 | INFO | user=web_8723fc98 | action=GET /models | result=запрос принят
+2026-11-10 00:13:45 | INFO | user=web_8723fc98 | action=GET /clusters | result=запрос принят
+2026-11-10 00:13:50 | INFO | user=web_8723fc98 | action=GET /clusters | result=запрос принят
+2026-11-10 00:13:53 | INFO | user=web_8723fc98 | action=GET /logs | result=запрос принят
+2026-11-10 00:14:30 | INFO | user=anonymous | action=GET / | result=запрос принят
+2026-11-10 00:14:32 | INFO | user=web_e824c5db | action=POST / | result=запрос принят
+2026-11-10 00:14:32 | INFO | user=web_e824c5db | action=POST /review | result=товар=Aluratek Fast Charge Black Power Bank with Dual USB and Single USB-C Ports 20000mAh оценка=2 тональность=негативный уверенность=94.7%
+2026-11-10 00:14:33 | INFO | user=web_e824c5db | action=GET /stats | result=запрос принят
+2026-11-10 00:14:37 | INFO | user=web_e824c5db | action=GET /products | result=запрос принят
+2026-11-10 00:14:39 | INFO | user=web_e824c5db | action=GET /models | result=запрос принят
+2026-11-10 00:14:40 | INFO | user=web_e824c5db | action=GET /clusters | result=запрос принят
+2026-11-10 00:14:45 | INFO | user=web_e824c5db | action=GET /clusters | result=запрос принят
+2026-11-10 00:14:48 | INFO | user=web_e824c5db | action=GET /logs | result=запрос принят
+2026-11-10 00:15:41 | INFO | user=anonymous | action=GET / | result=запрос принят

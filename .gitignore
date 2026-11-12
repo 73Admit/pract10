@@ -2,9 +2,18 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .venv/
-data/reviews.db
-app.log
+
+# служебные логи обучения CatBoost
+catboost_info/
+
+# скриншоты для отчёта Word — сами изображения уже встроены в .docx
+img/
+
+# матрица эмбеддингов (7 МБ) пересоздаётся командой python train_models.py
 models/embeddings.npy
-static/wordcloud*.png
+
+# графики статистики строятся при первом открытии страницы /stats
+static/wordcloud.png
+static/wordcloud_neg.png
 static/rating_dist.png
 static/dynamics.png
